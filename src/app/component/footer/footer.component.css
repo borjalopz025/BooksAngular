@@ -8,3 +8,10 @@ footer{
     text-decoration: none;
     
 }
+a{
+    text-decoration: none;
+    color: white;
+}
+a:active{
+    color: blue;
+}
