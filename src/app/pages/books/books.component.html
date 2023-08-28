@@ -1,38 +1,21 @@
-
+<main>
 <div *ngIf="books.length === 0; else lista">
     <h1>
         No hay lista de libros
     </h1>
 </div>
 <ng-template #lista>
-    <h2 class="tit">
+    <h1 class="tit">
     lista de libros
-    </h2>
+    </h1>
 </ng-template>
-<main>
+    <div id="card">
+        <ng-container class="flex" *ngFor="let lib of books ; let i = even; let o = odd">
+        
+            <app-card [libro]="lib" (eliminarLibro)="idEliminar($event)" [par]="par"></app-card>
+        </ng-container>
+    </div>
 
-    <ng-container *ngFor="let lib of books ; let i = even; let o = odd">
-        <div class="cajon">
-            <div class="fot">
-                <img src="{{lib.photo}}" alt="">
-            </div>
-            <div  class="letras">
-                <p>{{lib.type}}</p>
-                <hr>
-                <h4>{{lib.title}}</h4>
-                <p>Autor: {{lib.author}}</p>
-                <p>{{lib.id_book | codigo}}</p>
-                <p class="precio">{{lib.price}}€</p>
-                
-                
-                <div>
-                    <button class="button" [ngClass]="{'claseNaranja': i , 'claseAzul': o }">Comprar</button>
-                </div>
-                
-            </div>
-        </div>
-    </ng-container>
-    </main>
     <div class="formulario">
         <h1>Añadir libro</h1>
         <input type="text" placeholder="Titulo" #titulo>
@@ -43,4 +26,5 @@
         <input type="number" placeholder="Codigo Libro" #code>
         <button (click)="agregar(titulo,tapa,autor,precio,url,code,code)" class="but">Agregar libro</button>
     </div>
+</main> 
 

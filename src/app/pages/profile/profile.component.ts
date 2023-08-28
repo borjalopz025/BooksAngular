@@ -11,7 +11,7 @@ export class ProfileComponent {
     public user:User
 
     constructor(){
-      this.user = new User( 7777 , "alvaro" , "fernandez" , "alvaroRexulon@gmail.com" , "https://okdiario.com/img/2023/07/10/brad-pitt--635x358.jpg",  "aguitasala")
+      this.user = new User( 7777 , "Luisa" , "fernandez" , "luisaFotgrafa@gmail.com" , "https://img.freepik.com/foto-gratis/retrato-nina-rubia-alegre-camiseta-naranja_176420-33359.jpg",  "aguitasala")
                           
     }
 

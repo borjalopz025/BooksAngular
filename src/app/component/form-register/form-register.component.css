@@ -1,7 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+main{
+  background-image: url(src/assets/img/libreria.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .9;
+  min-height: 80vh;
+}
+h1{
+  margin-top: 5%;
+  margin-left: 45%;
+  color: #fff;
+}
 .container {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,10 +25,10 @@
   }
   
   .container {
-    background-color: #fff;
+    background-color:#fff;
     padding: 20px;
     border-radius: 5px;
-    
+    border: 2px solid rgb(80, 80, 80);
   }
   
   
@@ -21,23 +37,31 @@
     flex-direction: column;
     width: 30%;
     height: 50%;
-    margin-left: 40%;
+    margin-left: 38%;
     margin-top: 5%;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
+    border: 2px solid rgb(223, 220, 220);
+    margin-bottom: 5%;
+    border-radius: 10px;
+    background-color:#fff;
+    min-height: 30vh;
   }
   
   label {
-    margin-bottom: 5px;
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   
   input{
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 5px;
+    margin-bottom: 5px;
     border: none;
-    border-bottom: 1px solid #ccc; 
+    border-bottom: 1px solid #e2dfdf; 
     background-color: transparent; 
     font-size: 16px;
     outline: none; 
+    margin-left: 5%;
   }
   input:focus {
   border-bottom: 1px solid #007bff;
@@ -45,15 +69,18 @@
   
   button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #5faafa;
     color: #fff;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
+    margin-top: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: #031222;
   }
   
