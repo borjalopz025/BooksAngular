@@ -8,6 +8,9 @@
     <h1 class="tit">
     lista de libros
     </h1>
+
+<input class="buscado" type="number" placeholder="Buscador de libros" #buscar><button type="button" class="butt" (click)="clicar(buscar.valueAsNumber)">Buscar</button> 
+
 </ng-template>
     <div id="card">
         <ng-container class="flex" *ngFor="let lib of books ; let i = even; let o = odd">
@@ -16,15 +19,6 @@
         </ng-container>
     </div>
 
-    <div class="formulario">
-        <h1>Añadir libro</h1>
-        <input type="text" placeholder="Titulo" #titulo>
-        <input type="text" placeholder="Tapa blanda/dura" #tapa>
-        <input type="text" placeholder="Autor" #autor>
-        <input type="number" placeholder="Precio" #precio>
-        <input type="url" placeholder="Photo" #url>
-        <input type="number" placeholder="Codigo Libro" #code>
-        <button (click)="agregar(titulo,tapa,autor,precio,url,code,code)" class="but">Agregar libro</button>
-    </div>
+  
 </main> 
 

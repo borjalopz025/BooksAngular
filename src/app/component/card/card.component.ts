@@ -1,6 +1,7 @@
 import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, Input, Output, booleanAttribute } from '@angular/core';
 import { Books } from 'src/app/models/books';
+import { BooksService } from 'src/app/shared/books.service';
 
 @Component({
   selector: 'app-card',
@@ -11,11 +12,16 @@ export class CardComponent {
 
   @Input() libro:Books
   @Input() par:boolean
+  
   @Output() eliminarLibro = new EventEmitter<number>()
+
 
   eliminar():void{
     
     this.eliminarLibro.emit(this.libro.id_book)
     
   }
+  
+  
+   
 }

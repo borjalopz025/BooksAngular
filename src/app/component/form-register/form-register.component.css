@@ -83,4 +83,8 @@ h1{
   button:hover {
     background-color: #031222;
   }
-  
+  .obligatorio{
+    color: red;
+    font-size: small;
+    margin-left: 5%;
+  }

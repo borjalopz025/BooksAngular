@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { Books } from 'src/app/models/books';
+import { BooksService } from 'src/app/shared/books.service';
 
 @Component({
   selector: 'app-books',
@@ -12,29 +12,34 @@ export class BooksComponent {
     public books:Books[]
    
 
-    constructor(){
+    constructor(private libro : BooksService){
+
+      this.books = this.libro.books
+      
   
-      this.books = [
-        new Books("como engañar a un ladron","Tapa blanda","German Artegoitia",20,"https://oxigenoalavida.files.wordpress.com/2013/11/si-vienes-a-robar-mi-vecino-es-rico.jpg",77654, 99389),
-        new Books("El gato que le gusta el agua","Tapa blanda","Alvaro caravaca",15,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgrf5XzrTECvT17TS1XgRLLDo7qDAO2UTO5A&usqp=CAU",775697, 99747),
-        new Books("El ciego casimiro","Tapa blanda","Casimiro gonzalez ",35,"https://s3.ppllstatics.com/diariovasco/www/pre2017/multimedia/noticias/201603/19/media/broma-youtuber--575x323.jpg",78548, 99419),
-        new Books("Playa sin arena","Tapa blanda","Gonzalo perez",19.99,"https://www.lavanguardia.com/files/image_449_220/uploads/2021/12/30/61cd8c72af32c.jpeg",99654, 993559),
-
-      ]
+     
     }
-    
-    agregar(Title:HTMLInputElement,tipo:HTMLInputElement,author:HTMLInputElement,price:HTMLInputElement,photo:HTMLInputElement,codigo:HTMLInputElement ,id_usuario:HTMLInputElement){
-      let nuevoLibro =  new Books (Title.value,tipo.value,author.value,price.valueAsNumber,photo.value,codigo.valueAsNumber,id_usuario.valueAsNumber)
-      this.books.push(nuevoLibro)
-      console.log(nuevoLibro);
-   }
+    // hacer un if 
+    public clicar(num:number){
+      let click =this.books.findIndex(val => val.id_book === num)
+      if(click !== -1){
+        this.books = this.libro.getOne(num)
+      
+      }else {
+       console.log(
+        this.books = this.libro.getAll())
+        console.log(click);
+        
+      }
+      
+    }
    
-
-   idEliminar(num:number){
-    
-    this.books = this.books.filter(lib =>  lib.id_book != num)
-    
-    
-   }
+   
+   idEliminar(num:number):void{
+    this.libro.eliminar(num)
+    this.books =  this.books.filter(val=> val.id_book !== num)
+  
+  
+  }
    
 }

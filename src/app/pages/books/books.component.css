@@ -7,6 +7,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-bottom: 15%;
 }
 
 
@@ -116,3 +117,34 @@ h1{
     color: rgba(3, 3, 153, 0.61);
 
 }
+.buscado{
+    margin-left: 39%;
+    width: 15%;
+    padding: 1%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.butt{
+    width: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 5px;
+    color: white;
+    background: #eb94d0;
+    background-image: -webkit-linear-gradient(top, #2efa06, #2079b0);
+    background-image: -moz-linear-gradient(top, #2efa06, #2079b0);
+    background-image: -ms-linear-gradient(top, #2efa06, #2079b0);
+    background-image: -o-linear-gradient(top, #2efa06, #2079b0);
+    background-image: linear-gradient(to bottom, #2efa06, #2079b0);
+
+}
+.butt:hover {
+    background: #2079b0;
+    background-image: -webkit-linear-gradient(top, #2079b0, #2efa06);
+    background-image: -moz-linear-gradient(top, #2079b0, #2efa06);
+    background-image: -ms-linear-gradient(top, #2079b0, #2efa06);
+    background-image: -o-linear-gradient(top, #2079b0, #2efa06);
+    background-image: linear-gradient(to bottom, #2079b0, #2efa06);
+    text-decoration: none;
+  }
+  

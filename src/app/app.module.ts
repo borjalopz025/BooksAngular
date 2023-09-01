@@ -12,6 +12,11 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { BooksComponent } from './pages/books/books.component';
 import { CodigoPipe } from './pipes/codigo.pipe';
 import { CardComponent } from './component/card/card.component';
+import { AddBookComponent } from './pages/add-book/add-book.component';
+import { UpdatebookComponent } from './pages/updatebook/updatebook.component';
+import { LoginComponent } from './pages/login/login.component';
+import { FormLoginComponent } from './component/form-login/form-login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,10 +31,15 @@ import { CardComponent } from './component/card/card.component';
     BooksComponent,
     CodigoPipe,
     CardComponent,
+    AddBookComponent,
+    UpdatebookComponent,
+    LoginComponent,
+    FormLoginComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
