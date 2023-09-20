@@ -21,7 +21,10 @@ export class UpdatebookComponent {
 
   public add(titulo:string, tapa:string, autor: string, precio:number,photo:string,codigo:number){
    
-    this.bookservice.edit(new Books(titulo,tapa,autor,precio,photo,codigo))
+    this.bookservice.edit(new Books(titulo,tapa,autor,precio,photo,codigo)).subscribe((data) =>{
+      console.log(data);
+      
+    })
     
     this.router.navigateByUrl("/books")
   }

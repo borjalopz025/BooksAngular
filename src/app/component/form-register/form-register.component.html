@@ -13,7 +13,7 @@
     <h1>Registrate!!</h1>
   </div>
   <div class="contenedor">
-  <form>
+  <form [formGroup]="myForm">
       <label for="nombre">Nombre</label>
       <input type="text" id="nombre" name="nombre" formControlName="nombre"
       [ngClass]="{'is-invalid': (myForm.get('nombre').dirty || myForm.get('nombre').touched) && !myForm.get('nombre').valid}" >
