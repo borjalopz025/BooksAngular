@@ -13,28 +13,42 @@ export class BooksComponent {
     public books:Books[]
    
 
-    constructor(private libro : BooksService, private http:HttpClient){
+    constructor(private libroService: BooksService, private http:HttpClient){
+      this.books = []
+      this.libroService.getAll().subscribe((data:any) =>{
+      console.log(data.data)
+      this.books = data.data
+   
+    })
 
-      this.books = this.libro.books
-      
-  
-     
-    }
+  }
+    
     // hacer un if 
-    public clicar(num:number){
-      let click =this.books.findIndex(val => val.id_book === num)
-      if(click !== -1){
-        this.libro.getOne(num).subscribe((data)=> {
-          console.log(data);
-          
-        })
+     clicar(num):void{
+      console.log(num);
       
-      }else {
-        this.libro.getAll().subscribe((data) =>{
+      if(num != null &&  !Number.isNaN(num))
+      {
+        console.log('entro a getOne');
+        
+        this.libroService.getOne(num).subscribe((data:any) =>
+        {
           console.log(data);
-          
+          this.books= data.data
+
+        })
+      }else{
+        console.log('respuesta -1');
+       
+        this.libroService.getAll().subscribe((data:any)=>
+        {
+          console.log(data);
+          this.books= data.data
+        
         })
       }
+
+      
       
     }
    
@@ -42,7 +56,7 @@ export class BooksComponent {
    idEliminar(num:number):void{
    
     this.books =  this.books.filter(val=> val.id_book !== num)
-    this.libro.eliminar(num).subscribe((data) =>{
+    this.libroService.delete(num).subscribe((data) =>{
       console.log(data);
       
     })

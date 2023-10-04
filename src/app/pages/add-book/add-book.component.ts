@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Books } from 'src/app/models/books';
 import { BooksService } from 'src/app/shared/books.service';
@@ -11,7 +12,7 @@ export class AddBookComponent {
     
 
 
-  constructor( private book2:BooksService){
+  constructor( private book2:BooksService, private http:HttpClient){
     
   }
 

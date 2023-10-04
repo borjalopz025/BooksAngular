@@ -1,5 +1,5 @@
 import { outputAst } from '@angular/compiler';
-import { Component, EventEmitter, Input, Output, booleanAttribute } from '@angular/core';
+import { Component, EventEmitter, Input, Output, booleanAttribute,OnInit  } from '@angular/core';
 import { Books } from 'src/app/models/books';
 import { BooksService } from 'src/app/shared/books.service';
 
@@ -22,6 +22,9 @@ export class CardComponent {
     
   }
   
-  
+  ngOnInit(): void {
+    console.log(this.libro);
+    
+  }
    
 }
